@@ -145,4 +145,14 @@ class CoupanController extends Controller
             }
             return redirect('admin/coupan/trash');
     }
+    public function forcedelete($id)
+    {
+      $coupanforcedelete=Coupan::withTrashed()->find($id);
+      if(!is_null($coupanforcedelete))
+      {
+          $coupanforcedelete->forceDelete();
+      }
+      return redirect('admin/coupan/trash');
+
+    }
 }

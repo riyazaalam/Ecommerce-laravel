@@ -56,6 +56,12 @@
                             <form action="{{url('posts')}}" method="post">
                             @csrf
                                 <div class="form-group">
+                                <input id="image" type="file" name="profile_photo" value="{{ old('profile_photo') }}" placeholder="Photo" required="" capture>
+                                @if ($errors->has('profile_photo'))
+                                        <span class="text-danger">{{ $errors->first('profile_photo') }}</span>
+                                    @endif   
+                            </div>
+                                <div class="form-group">
                                     <label>First_name</label>
                                     <input class="au-input au-input--full" value="{{ old('fname') }}" type="text" name="fname" placeholder="Enter your First Name" >
                                     @if ($errors->has('fname'))

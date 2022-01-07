@@ -120,14 +120,15 @@ class AdminController extends Controller
         'lname' => 'required',
         'email' => 'required|email|unique:admins',
         'password' => 'required|confirmed|min:6',
-        'mob' => 'required',
+        'mobile' => 'required',
         'address' => 'required',
+        'profile_photo'=>'required',
         ]);
         DB::beginTransaction();
    try{ 
          $user =new user();
          $user->mobile=$request->mob;
-        $user->name=$request->fname;
+        $user->fname=$request->fname;
         $user->email=$request->email;
          $user->password=$request->password;
         
@@ -145,9 +146,10 @@ class AdminController extends Controller
         $reg->lname = $request->lname;
         $reg->email = $request->email;
         $reg->password = $request->password;
-        $reg->mobile = $request->mob;
+        $reg->mobile = $request->mobile;
         $reg->address=$request->address;
        $reg->user_id=$user_id;
+       $reg->profile_photo=$request->profile_photo;
         //$posts->name = $request->fname;
         //$posts->email = $request->email;
        
@@ -190,6 +192,7 @@ return redirect()->back()->with('error','data inserted fail');
      $request->validate([
         'fname' => 'required',
         'lname' => 'required',
+        'profile_photo'=>'required',
         'email' => 'required|unique:admins,email,'.$id,
         // 'password' => 'required|confirmed|min:6',
         'mobile' => 'required',
@@ -215,6 +218,7 @@ return redirect()->back()->with('error','data inserted fail');
         //  // $reg->password = $request->password;
           $reg->mobile = $request->mobile;
           $reg->address=$request->address;
+          $reg->profile_photo=$request->profile_photo;
        //  $reg->user_id=$user_id;
           $reg->save();
      //$user_id= Admin::where('id',$id)->first('user_id');

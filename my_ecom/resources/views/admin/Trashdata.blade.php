@@ -44,7 +44,7 @@
 </a> </li>
 
                           <li class="list-inline-item">
-             <a href="{{url('admin/coupan/delete/')}}/{{$list->id}}" >  <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+             <a href="{{url('admin/coupan/force-delete/')}}/{{$list->id}}" >  <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
 </a></li></td>
                     </tr>
                   @endforeach

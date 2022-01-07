@@ -22,6 +22,7 @@ class CreateAdminsTable extends Migration
             $table->integer('mobile');
             $table->string('address');
             $table->unsignedBigInteger('user_id');
+            $table->string('profile_photo');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

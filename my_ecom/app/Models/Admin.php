@@ -9,7 +9,7 @@ class Admin extends Model
 {
     use HasFactory;
     protected $table  ='admins';
-    protected $fillable=['fname','lname','email','password','mobile','address','user_id','status'];
+    protected $fillable=['fname','lname','email','password','mobile','address','user_id','status','profile_photo'];
 
     public function Role()
     {

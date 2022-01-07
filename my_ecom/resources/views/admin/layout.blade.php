@@ -84,6 +84,13 @@
                                 
 
                         </li>
+                        <li class="@yield('size_select')">
+                                    <a href="{{url('admin/coupan')}}">
+                                        <i class="fas fa-tags"></i>Size</a>
+                                </li>
+                                
+
+                        </li>
 
                     </ul>
                     </li>
@@ -127,6 +134,14 @@
                         <li class="@yield('trash_select')">
                                     <a href="{{url('admin/coupan/trash')}}">
                                         <i class="fas fa-sync-alt"></i>Trash Data Coupan</a>
+                                </li>
+                                
+
+                        </li>
+
+                        <li class="@yield('size_select')">
+                                    <a href="{{url('admin/coupan')}}">
+                                        <i class="fa fa-circle-o-notch"></i>Size</a>
                                 </li>
                                 
 

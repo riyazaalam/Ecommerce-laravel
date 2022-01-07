@@ -45,11 +45,13 @@ Route::group(['middleware'=>'admin_auth'],function(){
     Route::get('admin/coupan/trash',[CoupanController::class,'manage_coupan_trash']);
 
     Route::get('admin/coupan/restore/{id}',[CoupanController::class,'Restore_data']);
+
+    Route::get('admin/coupan/force-delete/{id}',[CoupanController::class,'forcedelete']);
     //trash
     
     //coupan code..
     //category trash data
-   // Route::get('admin/coupan/trash',[CoupanController::class,'manage_category_trash']);
+    Route::get('admin/coupan/trash',[CoupanController::class,'manage_category_trash']);
     //category trash data
 
 
@@ -72,6 +74,18 @@ Route::group(['middleware'=>'admin_auth'],function(){
    Route::get('admin/layout/regupdate/{id}',[AdminController::class,'regupdate']);
    Route::post('admin/layout/updateuser/{id}',[AdminController::class,'updateuser']);
     //register user update
+
+
+
+    //size code
+    Route::get('admin/size',[SizeController::class,'index']); 
+  
+    Route::get('admin/size/manage_size',[SizeController::class,'manage_coupan']);
+    Route::get('admin/size/manage_size/{id}',[SizeController::class,'manage_coupan']);
+    Route::post('admin/size/manage_size_process',[SizeController::class,'manage_coupan_process'])->name('coupan.manage_coupan_process');
+    Route::get('admin/size/status/{status}/{id}',[SizeController::class,'status']);
+    
+    //size code
 
 });
 Route::get('get_data',[AdminController::class,'show']);
